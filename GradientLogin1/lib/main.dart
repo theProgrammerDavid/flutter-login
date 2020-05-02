@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[200]))),
                           child: TextField(
-                            autofocus: true,
+                              autofocus: true,
                               decoration: InputDecoration(
                                   hintText: "Email or username",
                                   border: InputBorder.none,
@@ -76,14 +76,41 @@ class HomePage extends StatelessWidget {
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[200]))),
                           child: TextField(
-                            obscureText: true,
+                              obscureText: true,
                               decoration: InputDecoration(
                                   hintText: "Password",
                                   border: InputBorder.none,
                                   hintStyle:
                                       TextStyle(color: Colors.grey[500]))),
-                        )
+                        ),
                       ]),
+                    ),
+                    SizedBox(height: 40),
+                    Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    SizedBox(height: 40),
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          gradient: LinearGradient(
+                              // begin: Alignment.topCenter,
+                              colors: [
+                                Colors.orange[900],
+                                Colors.orange[800],
+                                Colors.orange[600]
+                              ])),
+                      child: Container(
+                        width: 350,
+                        child: FlatButton(
+                            onPressed: () => {
+                              print("Sign in button pressed")
+                            },
+                            child: Text("Sign In",
+                                style: TextStyle(color: Colors.white))),
+                      ),
                     ),
                   ])),
             )),
