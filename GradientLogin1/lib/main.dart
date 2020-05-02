@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.all(20),
                   child: Column(children: <Widget>[
-                    SizedBox(height:20),
+                    SizedBox(height: 20),
                     Container(
                       padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
@@ -56,9 +56,34 @@ class HomePage extends StatelessWidget {
                           ],
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white),
-                          child: Column(children: <Widget>[
-                            Container()
-                          ]),
+                      child: Column(children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(color: Colors.grey[200]))),
+                          child: TextField(
+                            autofocus: true,
+                              decoration: InputDecoration(
+                                  hintText: "Email or username",
+                                  border: InputBorder.none,
+                                  hintStyle:
+                                      TextStyle(color: Colors.grey[500]))),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(color: Colors.grey[200]))),
+                          child: TextField(
+                            obscureText: true,
+                              decoration: InputDecoration(
+                                  hintText: "Password",
+                                  border: InputBorder.none,
+                                  hintStyle:
+                                      TextStyle(color: Colors.grey[500]))),
+                        )
+                      ]),
                     ),
                   ])),
             )),
