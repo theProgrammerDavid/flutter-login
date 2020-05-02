@@ -5,10 +5,12 @@ void main() =>
 
 class HomePage extends StatelessWidget {
   final double borderRadiusValue = 40;
+  
   const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       padding: EdgeInsets.symmetric(vertical: 0),
       child: Scaffold(
@@ -105,9 +107,7 @@ class HomePage extends StatelessWidget {
                       child: Container(
                         width: 350,
                         child: FlatButton(
-                            onPressed: () => {
-                              print("Sign in button pressed")
-                            },
+                            onPressed: () => {print("Sign in button pressed")},
                             child: Text("Sign In",
                                 style: TextStyle(color: Colors.white))),
                       ),
