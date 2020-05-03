@@ -104,13 +104,15 @@ class HomePage extends StatelessWidget {
                                 Colors.orange[600]
                               ])),
                       child: Container(
-                        width: 350,
+                        width: 250,
                         child: FlatButton(
                             onPressed: () => {print("Sign in button pressed")},
                             child: Text("Sign In",
                                 style: TextStyle(color: Colors.white))),
                       ),
                     ),
+                    SizedBox(height: 50),
+                    Text("Continue with Social Media", style: TextStyle(color: Colors.grey, fontSize:10)),
                     SizedBox(height: 50),
                     Row(children: <Widget>[
                       Expanded(
