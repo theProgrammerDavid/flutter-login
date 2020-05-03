@@ -112,7 +112,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 50),
-                    Text("Continue with Social Media", style: TextStyle(color: Colors.grey, fontSize:10)),
+                    Text("Continue with Social Media",
+                        style: TextStyle(color: Colors.grey, fontSize: 10)),
                     SizedBox(height: 50),
                     Row(children: <Widget>[
                       Expanded(
@@ -131,7 +132,7 @@ class HomePage extends StatelessWidget {
                       SizedBox(width: 20),
                       Expanded(
                         child: Container(
-                           child: FlatButton(
+                            child: FlatButton(
                               onPressed: () => {},
                               child: Text("Sign in with Github",
                                   style: TextStyle(
