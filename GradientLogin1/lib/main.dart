@@ -5,12 +5,11 @@ void main() =>
 
 class HomePage extends StatelessWidget {
   final double borderRadiusValue = 40;
-  
+
   const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       padding: EdgeInsets.symmetric(vertical: 0),
       child: Scaffold(
@@ -112,6 +111,36 @@ class HomePage extends StatelessWidget {
                                 style: TextStyle(color: Colors.white))),
                       ),
                     ),
+                    SizedBox(height: 50),
+                    Row(children: <Widget>[
+                      Expanded(
+                        child: Container(
+                            height: 50,
+                            child: FlatButton(
+                              onPressed: () => {},
+                              child: Text("Sign in with Facebook",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(40))),
+                      ),
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: Container(
+                           child: FlatButton(
+                              onPressed: () => {},
+                              child: Text("Sign in with Github",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                            ),
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(40))),
+                      ),
+                    ]),
                   ])),
             )),
           ]),
