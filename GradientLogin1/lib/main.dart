@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:GradientLogin1/createAccount.dart';
 
 void main() =>
     runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
@@ -86,12 +87,39 @@ class HomePage extends StatelessWidget {
                         ),
                       ]),
                     ),
-                    SizedBox(height: 40),
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyle(color: Colors.grey),
+                    // SizedBox(height: 20),
+                    // FlatButton(
+                    //     onPressed: () => {},
+                    //     child: Text(
+                    //       "Forgot Password?",
+                    //       style: TextStyle(color: Colors.grey),
+                    //     )),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: FlatButton(
+                          onPressed: () => {},
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(color: Colors.grey),
+                          )),
                     ),
-                    SizedBox(height: 40),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: FlatButton(
+                          onPressed: () => {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => createAccount(),
+                                    ))
+                              },
+                          child: Text(
+                            "Create Account",
+                            style: TextStyle(color: Colors.grey),
+                          )),
+                    ),
+                    //SizedBox(height: 40),
+
                     Container(
                       height: 50,
                       decoration: BoxDecoration(
@@ -134,7 +162,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                             child: FlatButton(
                               onPressed: () => {},
-                              child: Text("Sign in with Github",
+                              child: Text("Sign in with Google",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 12)),
                             ),
