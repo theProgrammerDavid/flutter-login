@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 import 'dart:convert' show json;
 
@@ -33,7 +31,7 @@ class SignInDemo extends StatefulWidget {
 class SignInDemoState extends State<SignInDemo> {
   GoogleSignInAccount? _currentUser;
   String _contactText = '';
-
+  List<String> contacts = <String>[];
   @override
   void initState() {
     super.initState();
@@ -78,6 +76,14 @@ class SignInDemoState extends State<SignInDemo> {
 
   String? _pickFirstNamedContact(Map<String, dynamic> data) {
     final List<dynamic>? connections = data['connections'];
+
+    connections?.forEach((element) {
+      // print(element['names']['displayName']);
+      // Map<String, dynamic> x = json.decode(element['names']);
+      print(json.decode(element['names']).toString());
+      
+    });
+
     final Map<String, dynamic>? contact = connections?.firstWhere(
       (dynamic contact) => contact['names'] != null,
       orElse: () => null,
@@ -112,23 +118,34 @@ class SignInDemoState extends State<SignInDemo> {
       return Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          ListTile(
-            leading: GoogleUserCircleAvatar(
-              identity: user,
-            ),
-            title: Text(user.displayName ?? ''),
-            subtitle: Text(user.email),
-          ),
-          const Text("Signed in successfully."),
-          Text(_contactText),
-          ElevatedButton(
-            child: const Text('SIGN OUT'),
-            onPressed: _handleSignOut,
-          ),
-          ElevatedButton(
-            child: const Text('REFRESH'),
-            onPressed: () => _handleGetContact(user),
-          ),
+          Expanded(
+              child: SizedBox(
+            height: 200,
+            child: ListView.builder(
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return ListTile(title: Text('$contacts[index]'));
+                }),
+          )),
+
+          // ListTile(
+          //   leading: GoogleUserCircleAvatar(
+          //     identity: user,
+          //   ),
+          //   title: Text(user.displayName ?? ''),
+          //   subtitle: Text(user.email),
+          // ),
+          // const Text("Signed in successfully."),
+          // Text(_contactText + '${contacts.length}'),
+
+          // ElevatedButton(
+          //   child: const Text('SIGN OUT'),
+          //   onPressed: _handleSignOut,
+          // ),
+          // ElevatedButton(
+          //   child: const Text('REFRESH'),
+          //   onPressed: () => _handleGetContact(user),
+          // ),
         ],
       );
     } else {
